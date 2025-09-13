@@ -1,0 +1,111 @@
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: fixmyphone-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: fixmyphone
+      POSTGRES_USER: fixmyphone_user
+      POSTGRES_PASSWORD: fixmyphone_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"
+    networks:
+      - fixmyphone-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U fixmyphone_user -d fixmyphone"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Backend API Service
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    container_name: fixmyphone-api
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      PORT: 5051
+      DATABASE_URL: postgresql://fixmyphone_user:fixmyphone_password@postgres:5432/fixmyphone
+      DATABASE_PROD_URL: postgresql://fixmyphone_user:fixmyphone_password@postgres:5432/fixmyphone
+      JWT_SECRET: your-super-secret-jwt-key-change-in-production
+      JWT_EXPIRED_IN: 30d
+      JWT_REFRESH_SECRET: your-refresh-token-secret-change-in-production
+      JWT_SECRET_SALT_ROUND: 12
+      CLOUD_NAME: ${CLOUDINARY_CLOUD_NAME:-demo-cloud}
+      API_KEY: ${CLOUDINARY_API_KEY:-demo-key}
+      API_SECRET: ${CLOUDINARY_API_SECRET:-demo-secret}
+      NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: ${STRIPE_PUBLISHABLE_KEY:-pk_test_demo}
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY:-sk_test_demo}
+    ports:
+      - "5051:5051"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - fixmyphone-network
+    volumes:
+      - api_uploads:/app/uploads
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:5051/api/v1/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Frontend Client Service
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: fixmyphone-client
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      NEXT_PUBLIC_API_BASE_URL: http://api:5051/api/v1
+      NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: ${STRIPE_PUBLISHABLE_KEY:-pk_test_demo}
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY:-sk_test_demo}
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
+    networks:
+      - fixmyphone-network
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Nginx Reverse Proxy (Optional - for production)
+  nginx:
+    image: nginx:alpine
+    container_name: fixmyphone-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+    depends_on:
+      - client
+      - api
+    networks:
+      - fixmyphone-network
+    profiles:
+      - production
+
+networks:
+  fixmyphone-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+    driver: local
+  api_uploads:
+    driver: local

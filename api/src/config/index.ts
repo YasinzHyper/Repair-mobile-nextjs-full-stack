@@ -7,13 +7,13 @@ const DatabaseURL = process.env.NODE_ENV === 'development' ? process.env.DATABAS
 
 export default {
     env: process.env.NODE_ENV,
-    databse: DatabaseURL,
+    database: DatabaseURL,
     port: process.env.PORT,
-    jwt_secret: process.env.JWT_SCRET,
+    jwt_secret: process.env.JWT_SECRET,
     jwt_expiredIn: process.env.JWT_EXPIRED_IN,
-    jwt_secret_salt: process.env.JWT_SCRET_SALT_ROUND,
+    jwt_secret_salt: process.env.JWT_SECRET_SALT_ROUND,
     cloudinary: {
-        name: process.env.CLOUND_NAME,
+        name: process.env.CLOUD_NAME,
         key: process.env.API_KEY,
         secret: process.env.API_SECRET
     },

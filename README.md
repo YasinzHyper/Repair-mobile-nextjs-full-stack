@@ -1,261 +1,309 @@
 <div align="center">
   <img src="https://res.cloudinary.com/dg8dkpulv/image/upload/v1701016109/fixmyphone3_crop_qksmvn.png" alt="logo" width="200" height="auto" />
   <h1>Fix My Phone</h1>
-  # Next.js Project with Node.js and Express Backend
   <p>
-    Welcome to our Next.js project with a Node.js and Express backend! This project aims to provide a comprehensive solution for managing mobile device repairs. Users can register, request services, track their repairs, make payments, and more. Admins have tools to efficiently manage service requests, appointments, technicians, inventory, and customer accounts.
+    A comprehensive full-stack mobile device repair management platform built with Next.js and Express.js
   </p>
   
-<!-- Badges -->
-<p>
-  <a href="https://github.com/Louis3797/awesome-readme-template/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/Louis3797/awesome-readme-template" alt="contributors" />
-  </a>
-  <a href="">
-    <img src="https://img.shields.io/github/last-commit/Louis3797/awesome-readme-template" alt="last update" />
-  </a>
-  <a href="#">
-    <img src="https://img.shields.io/github/forks/Louis3797/awesome-readme-template" alt="forks" />
-  </a>
-  <a href="#">
-    <img src="https://img.shields.io/github/stars/Louis3797/awesome-readme-template" alt="stars" />
-  </a>
-  <a href="#">
-    <img src="https://img.shields.io/github/issues/Louis3797/awesome-readme-template" alt="open issues" />
-  </a>
-</p>
-   
-<h4>
-    <a href="https://fix-my-phone-ujjalzaman.vercel.app/">View Demo</a>
-  <span> · </span>
-    <a href="https://ujjalzaman-b6c8a.web.app/">Portfolio</a>
-  <span> · </span>
-    <a href="https://youtu.be/IRuWuqt7yOs ">Project Youtube Video</a>
-  <span> · </span>
-  </h4>
+  <p>
+    <a href="https://fix-my-phone-ujjalzaman.vercel.app/">🌐 Live Demo</a>
+    •
+    <a href="https://youtu.be/IRuWuqt7yOs">🎬 Video Demo</a>
+    •
+    <a href="https://ujjalzaman-b6c8a.web.app/">👤 Portfolio</a>
+  </p>
 </div>
 
-<br />
+---
 
-<!-- Table of Contents -->
-# Table of Contents
+## 🚀 Quick Start with Docker
 
-- [About the Project](#about-the-project)
-  * [Screenshots](#screenshots)
-  * [Tech Stack](#tech-stack)
-  * [Features](#features)
-  * [Color Reference](#color-reference)
-  * [Environment Variables](#environment-variables)
-- [Getting Started](#getting-started)
-  * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
-  * [Run Locally](#run-locally)
-  * [Deployment](#deployment)
-- [Contributing](#contributing)
-- [Contact](#contact)
-  
-<!-- Features -->
-### Features
-<!-- About the Project -->
-## What Features Will You Find Here?
-  ### Admin
-    - Dynamic home page, serving as the landing page for all users.
-    - Admin and user dashboards.
-    - User login page with professional handling of all kinds of validations.
-    - **Service Request Management:** - View and manage repair service requests, assign them to technicians, and update the status.
-    - **Appointment Scheduling:** - Manage appointment schedules, including adding, modifying, or canceling appointments.
-    - **Technician Management:** - Manage technician schedules, assignments, and workloads.
-    - **Payment Verification:** - Verify and process payments made by customers.
-    - **Customer Management:** - Manage customer accounts, including account creation.
-    - **Communication:** - Communicate with customers and technicians to provide updates, address concerns, and resolve issues.
-    - **Reporting and Analytics:**
-   - Generate reports on repair service performance, revenue, and other key metrics.
+Get the entire application running in **under 3 minutes** with Docker:
 
-  ### Super Admin
-    - ** User Role Management:** - Super Admins can create, modify, or delete admin accounts and have access to all functionality.
+### Prerequisites
+- [Docker](https://www.docker.com/get-started) & Docker Compose
+- [Git](https://git-scm.com/)
 
-  ### Customer Features
-
-    - **Registration and Login ** - Customers can create accounts and log in to access the website's features.
-    - **Service Request:** - Users can request repairs for their mobile devices, providing details such as device type, issue description, and preferred appointment time.
-    - **Service Tracking:** - Track the status of repair requests, including updates on progress and estimated completion times.
-    - **Appointment Booking:** - Schedule repair appointments, choosing from available time slots.
-    - **Payment Processing:** - Make secure online payments for repair services.
-    - **Order History:** - View repair order history, including invoices and receipts.
-    - **Messaging and Notifications:** - Receive notifications about repair updates and communicate with the service team.
-    - ** Profile Management:** - Update personal information, including contact details and payment methods.
-
-
-<!-- Screenshots -->
-### Screenshots
-
-<div align="center"> 
-  <img src="https://res.cloudinary.com/dg8dkpulv/image/upload/v1701016100/home_page_1_gjbopl.png" alt="screenshot" />
-  <img src="https://res.cloudinary.com/dg8dkpulv/image/upload/v1701016094/appointment_wi8vvc.png" />
-  <img src="https://res.cloudinary.com/dg8dkpulv/image/upload/v1701016090/Dashboard_oaeh2j.png" />
-  <img src="https://res.cloudinary.com/dg8dkpulv/image/upload/v1701016107/screencapture-fix-my-phone-ujjalzaman-vercel-app-blog-2023-11-25-22_02_02_h61aph.png" />
-</div>
-
-
-<!-- TechStack -->
-### Tech Stack
-
-<details>
-  <summary>Client</summary>
-  <ul>
-    <li><a href="https://www.typescriptlang.org/">Typescript</a></li>
-    <li><a href="https://nextjs.org/">Next.js</a></li>
-    <li><a href="#">Bootstrap</a></li>
-    <li><a href="#">Stripe</a></li>
-    <li><a href="#">Ant Design</a></li>
-    <li><a href="#">Swiper</a></li>
-    <li><a href="#">React Hook Form</a></li>
-    <li><a href="#">React Chartsjs-2</a></li>
-  </ul>
-</details>
-
-<details>
-  <summary>Server</summary>
-  <ul>
-    <li><a href="https://www.typescriptlang.org/">Typescript</a></li>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
-    <li><a href="#">Prisma</a></li>
-    <li><a href="#">Stripe</a></li>
-    <li><a href="#">Jwt</a></li>
-    <li><a href="#">multer</a></li>
-    <li><a href="#">zod</a></li>
-</details>
-
-<details>
-<summary>Database</summary>
-  <ul>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
-  </ul>
-</details>
-
-<!-- Color Reference -->
-### Color Reference
-
-| Color             | Hex                                                                |
-| ----------------- | ------------------------------------------------------------------ |
-| Primary Color | ![#457b9d](https://via.placeholder.com/10/222831?text=+) #457b9d |
-| Secondary Color | ![#588157](https://via.placeholder.com/10/393E46?text=+) #588157 |
-| Accent Color | ![#1d3557](https://via.placeholder.com/10/00ADB5?text=+) #1d3557 |
-| Text Color | ![#1d3557](https://via.placeholder.com/10/EEEEEE?text=+) #1d3557 |
-
-<!-- Getting Started -->
-## Getting Started
-### The front-end and Express code are in the same directory, with the Express API located at ./api and frontend is ./client directory
-1. Clone or download the project source code to your local machine.
-2. Install dependencies. This can be done using a package manager such as npm (Node Package Manager) or yarn.
-3. Run the development server. This can be done using a command line tool such as the terminal, where you can run the command npm start or yarn start.
-4. Access the project in your web browser by navigating to `http://localhost:3000` or another specified URL.
-
-### 1. Clone the repository:
-
+### 1️⃣ Clone and Setup
 ```bash
 git clone https://github.com/Ujjalzaman/Repair-mobile-nextjs-full-stack.git
+cd Repair-mobile-nextjs-full-stack
+cp .env.example .env
 ```
 
-### 2. Install Frontend Dependencies:
+### 2️⃣ Configure Services (Optional)
+Edit `.env` file with your credentials
+
+### 3️⃣ Launch Application
+```bash
+# Start everything (production mode)
+docker-compose up --build
+
+# OR start in development mode with hot reload
+docker-compose -f docker-compose.dev.yml up --build
+```
+
+### 🌐 Access Your Application
+- **Frontend**: http://localhost:3000
+- **Backend API**: http://localhost:5051  
+- **Database**: localhost:5432
+
+### 🛠️ Useful Commands
+```bash
+# View logs
+docker-compose logs -f
+
+# Stop everything
+docker-compose down
+
+# Database management
+docker-compose exec api npx prisma studio
+
+# Health check
+curl http://localhost:5051/api/v1/health
+```
+
+---
+
+## 📋 Table of Contents
+
+- [About the Project](#-about-the-project)
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [Screenshots](#-screenshots)
+- [Manual Installation](#-manual-installation)
+- [Architecture](#-architecture)
+- [Contributing](#-contributing)
+- [Contact](#-contact)
+
+---
+
+## 🎯 About the Project
+
+Fix My Phone is a comprehensive solution for managing mobile device repairs. It provides tools for customers to request services, track repairs, and make payments, while giving admins powerful tools to manage service requests, appointments, technicians, and customer accounts.
+
+### Key Benefits
+- ✅ **Complete Mobile Repair Workflow**
+- ✅ **Real-time Service Tracking**
+- ✅ **Secure Payment Processing**
+- ✅ **Admin Dashboard & Analytics**
+- ✅ **Multi-role User Management**
+- ✅ **Docker Containerized Deployment**
+
+---
+
+## ✨ Features
+
+### 👥 Customer Features
+- **Service Requests** - Submit repair requests with device details
+- **Appointment Booking** - Schedule repair appointments
+- **Order Tracking** - Real-time repair status updates
+- **Payment Processing** - Secure online payments via Stripe
+- **Order History** - View past repairs and invoices
+- **Profile Management** - Update personal information
+- **Notifications** - Receive repair status updates
+
+### 🔧 Admin Features
+- **Service Management** - View and manage repair requests
+- **Appointment Scheduling** - Manage appointment schedules
+- **Technician Management** - Assign technicians and manage workloads
+- **Payment Verification** - Process and verify payments
+- **Customer Management** - Manage customer accounts
+- **Analytics & Reporting** - Performance metrics and reports
+- **Communication Tools** - Update customers on repair progress
+
+### 👑 Super Admin Features
+- **User Role Management** - Create and manage admin accounts
+- **System Administration** - Full access to all functionality
+- **Advanced Analytics** - Comprehensive system reports
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **Framework**: Next.js 13+ with TypeScript
+- **UI Library**: Ant Design
+- **State Management**: Redux Toolkit
+- **Forms**: React Hook Form
+- **Charts**: Chart.js
+- **Styling**: CSS Modules
+- **HTTP Client**: Axios
+
+### Backend
+- **Framework**: Express.js with TypeScript
+- **Database**: PostgreSQL with Prisma ORM
+- **Authentication**: JWT Tokens
+- **File Upload**: Multer + Cloudinary
+- **Payments**: Stripe API
+- **Validation**: Zod
+- **Security**: bcrypt, CORS
+
+### DevOps & Deployment
+- **Containerization**: Docker & Docker Compose
+- **Database**: PostgreSQL 15
+- **Reverse Proxy**: Nginx (production)
+- **Cloud Storage**: Cloudinary
+- **Payment Gateway**: Stripe
+
+---
+
+## 📸 Screenshots
+
+<div align="center">
+  <img src="https://res.cloudinary.com/dg8dkpulv/image/upload/v1701016100/home_page_1_gjbopl.png" alt="Homepage" width="400" />
+  <img src="https://res.cloudinary.com/dg8dkpulv/image/upload/v1701016094/appointment_wi8vvc.png" alt="Appointment" width="400" />
+  <img src="https://res.cloudinary.com/dg8dkpulv/image/upload/v1701016090/Dashboard_oaeh2j.png" alt="Dashboard" width="400" />
+  <img src="https://res.cloudinary.com/dg8dkpulv/image/upload/v1701016107/screencapture-fix-my-phone-ujjalzaman-vercel-app-blog-2023-11-25-22_02_02_h61aph.png" alt="Blog" width="400" />
+</div>
+
+---
+
+## 💻 Manual Installation
+
+If you prefer to run without Docker:
+
+### Prerequisites
+- Node.js 20+
+- PostgreSQL 12+
+- npm or yarn
+
+### Backend Setup
+```bash
+cd api
+npm install
+
+# Create .env file
+cat > .env << EOF
+DATABASE_URL=postgresql://username:password@localhost:5432/fixmyphone
+NODE_ENV=development
+PORT=5051
+JWT_SECRET=your-secret-key
+JWT_EXPIRED_IN=30d
+JWT_REFRESH_SECRET=your-refresh-secret
+JWT_SECRET_SALT_ROUND=12
+CLOUD_NAME=your-cloudinary-name
+API_KEY=your-cloudinary-key
+API_SECRET=your-cloudinary-secret
+STRIPE_SECRET_KEY=sk_test_your-key
+EOF
+
+# Setup database
+npx prisma migrate dev
+npx prisma generate
+
+# Start development server
+npm run dev
+```
+
+### Frontend Setup
 ```bash
 cd client
 npm install
-```
-Setup environment for the frontend:
-Under the src/app folder, create an env.local file.
 
-Set the following credentials in the env.local file:
+# Create .env.local file
+cat > .env.local << EOF
+NEXT_PUBLIC_API_BASE_URL=http://localhost:5051/api/v1
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_your-key
+EOF
 
-```bash
-NEXT_PUBLIC_API_BASE_URL=http://localhost:3030/api/v1  # Replace with your backend link
-NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_5454747d54  # Replace with your Stripe publishable key for the payment gateway
-STRIPE_SECRET_KEY=sk_test_656565  # Replace with your Stripe secret key
-```
-
-### 3. Install Backend Project:
-    To set up an Express API in the "./api" directory of a project, you can follow these steps:
-    1. Install the required dependencies by running npm install or yarn install in the terminal and including the express module as a dependency.
-    2. Set up the server and configure middleware in a file such as index.js within the "./api" directory. Import the express module and create an instance of an express application, set up routes for handling HTTP requests, and configure middleware for handling requests and responses.
-    3. Set up environment variables for the project by creating a file such as .env in the root directory and specifying key-value pairs for any environment-specific variables, such as a port number or database credentials.
-    4. Start the server by running a command such as node index.js or nodemon index.js in the terminal.
-    5. Test the API by sending HTTP requests to the server using tools such as Postman or cURL.
-
-    ```bash
-    cd api
-    npm install
-    ```
-    Setup environment for the backend:
-    Create a .env file in the api directory.
-
-    Set the following credentials in the .env file:
-
-    ```bash
-    DATABASE_PROD_URL=database url
-    NODE_ENV='development'
-    PORT=5051
-    JWT_SECRET=secret key
-    JWT_EXPIRED_IN=30d
-    JWT_REFRESH_SECRET=refresh token
-    JWT_SECRET_SALT_ROUND=10
-
-    # Cloudinary
-    CLOUD_NAME=dg8dkpulv
-    API_KEY=454831555123244
-    API_SECRET=t7UWrk_ZpfWm1rGsGskWyn2TDJI
-    NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=stripe publishable key
-    STRIPE_SECRET_KEY=stripe secret key
-    ```
-
-<!-- Prerequisites -->
-### Prerequisites
-
-
-
-```bash
- In this project use nodejs 20
+# Start development server
+npm run dev
 ```
 
+---
 
-<!-- Contributing -->
-## Contributing
+## 🏗️ Architecture
 
-<a href="#">
-  <img src="https://contrib.rocks/image?repo=Louis3797/awesome-readme-template" />
-</a>
+```
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Next.js App  │    │   Express API   │    │  PostgreSQL DB  │
+│   (Frontend)    │◄──►│   (Backend)     │◄──►│   (Database)    │
+│   Port: 3000    │    │   Port: 5051    │    │   Port: 5432    │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+         │                       │                       │
+         │                       │                       │
+    ┌────▼────┐             ┌────▼────┐             ┌────▼────┐
+    │  Ant    │             │ Prisma  │             │ Docker  │
+    │ Design  │             │   ORM   │             │ Volume  │
+    └─────────┘             └─────────┘             └─────────┘
+         │                       │
+    ┌────▼────┐             ┌────▼────┐
+    │ Stripe  │             │Cloudinary│
+    │ Payment │             │ Storage │
+    └─────────┘             └─────────┘
+```
 
-Contributions are always welcome!
+### Project Structure
+```
+.
+├── api/                    # Backend Express.js app
+│   ├── src/
+│   │   ├── app/
+│   │   │   ├── modules/    # Feature modules
+│   │   │   ├── middlewares/# Auth & validation
+│   │   │   └── routes/     # API routes
+│   │   ├── config/         # Configuration
+│   │   └── shared/         # Utilities
+│   └── prisma/             # Database schema
+├── client/                 # Frontend Next.js app
+│   └── src/
+│       ├── app/            # Next.js 13+ app directory
+│       ├── components/     # React components
+│       ├── redux/          # State management
+│       └── helpers/        # Utilities
+├── nginx/                  # Reverse proxy config
+├── database/               # DB initialization
+├── docker-compose.yml      # Production setup
+├── docker-compose.dev.yml  # Development setup
+└── .env.example            # Environment template
+```
 
-See `contributing.md` for ways to get started.
+---
 
-## Contributing:
+## 🤝 Contributing
 
-1. Fork the repository by clicking the "Fork" button on the top right corner of the project's GitHub page. This will create a copy of the project in your own GitHub account.
+Contributions are welcome! Here's how to get started:
 
-2. Clone the forked repository to your local machine by running the command ``` git clone https://github.com/your-username/online-doctor-appointment.git ``` in your terminal.
+1. **Fork the repository**
+2. **Clone your fork**
+   ```bash
+   git clone https://github.com/your-username/Repair-mobile-nextjs-full-stack.git
+   ```
+3. **Create a feature branch**
+   ```bash
+   git checkout -b feature/amazing-feature
+   ```
+4. **Make your changes**
+5. **Test thoroughly** (both Docker and manual setups)
+6. **Commit your changes**
+   ```bash
+   git commit -m 'Add amazing feature'
+   ```
+7. **Push to your branch**
+   ```bash
+   git push origin feature/amazing-feature
+   ```
+8. **Open a Pull Request**
 
-3.Install the project's dependencies by running npm install or yarn install in the project's root directory.
-Create a new branch for your changes by running the command ``` git checkout -b branch-name ```, where branch-name is a descriptive name for your branch.
-Make your desired changes to the code.
+### Development Guidelines
+- Follow TypeScript best practices
+- Write meaningful commit messages
+- Test your changes with Docker
+- Update documentation if needed
 
-4.Test your changes locally by running npm start or yarn start and accessing the project in your web browser at ``` http://localhost:3000 ``` or another specified URL.
-5. Add and commit your changes to your local repository by running the command git add . followed by ``` git commit -m "Your commit message here" ```
+---
 
-6. Push your changes to your forked repository by running the command ``` git push origin branch-name ```
+## 📞 Contact
 
-7. Create a pull request (PR) by navigating to your forked repository on GitHub and clicking the "New pull request" button. Make sure that the base branch is set to the original project's branch that you want to contribute to, and the head branch is set to your forked repository's branch that contains your changes.
+**Ujjal Zaman**
+- 🌐 Portfolio: [ujjalzaman-b6c8a.web.app](https://ujjalzaman-b6c8a.web.app/)
+- 💼 LinkedIn: [linkedin.com/in/ujjal-zaman](https://www.linkedin.com/in/ujjal-zaman)
+- 📧 Email: ujjalzaman@gmail.com
 
-8.Write a descriptive title and message for your pull request, explaining the changes you made and why they should be merged.
-Wait for the project's maintainers to review your pull request and provide feedback. You may be asked to make further changes or address any issues before your changes are merged.
+---
 
-9.Once your pull request is approved and merged, your changes will become part of the project. Congratulations, you have successfully contributed to the project!
-
-Thank you for considering this project. If you have any questions, please do not hesitate to contact me.
-
-
-<!-- Contact -->
-## Contact
-
-Ujjal zaman - [@linkedin](www.linkedin.com/in/ujjal-zaman) - ujjalzaman@gmail.com
-
-Portfolio Link: [https://ujjalzaman-b6c8a.web.app/](https://ujjalzaman-b6c8a.web.app/)
+<div align="center">
+  <p>⭐ Star this repository if you found it helpful!</p>
+  <p>Built with ❤️ by <a href="https://ujjalzaman-b6c8a.web.app/">Ujjal Zaman</a></p>
+</div>

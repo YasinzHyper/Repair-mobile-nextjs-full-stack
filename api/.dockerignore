@@ -1,0 +1,22 @@
+# API Docker ignore file
+node_modules
+npm-debug.log
+.nyc_output
+coverage
+.env
+.env.local
+.env.production
+.env.staging
+dist
+*.log
+.git
+.gitignore
+README.md
+.DS_Store
+.vscode
+.idea
+*.md
+*.txt
+Dockerfile*
+docker-compose*
+.dockerignore

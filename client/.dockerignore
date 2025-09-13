@@ -1,0 +1,23 @@
+# Client Docker ignore file
+node_modules
+.next
+.env*.local
+.vercel
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+*.log
+.git
+.gitignore
+README.md
+.DS_Store
+.vscode
+.idea
+*.md
+*.txt
+Dockerfile*
+docker-compose*
+.dockerignore
+coverage
+.nyc_output

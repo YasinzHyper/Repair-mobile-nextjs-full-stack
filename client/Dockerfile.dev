@@ -1,0 +1,35 @@
+# Development Dockerfile for Frontend Client
+FROM node:20-alpine AS base
+
+# Install dependencies only when needed
+FROM base AS deps
+RUN apk add --no-cache libc6-compat
+WORKDIR /app
+
+# Install dependencies
+COPY package.json package-lock.json* ./
+RUN npm ci
+
+# Development stage
+FROM base AS development
+WORKDIR /app
+
+ENV NODE_ENV=development
+
+# Use root user for development to avoid permission issues with volume mounts
+# This is acceptable for development but should not be used in production
+USER root
+
+# Copy node_modules from deps stage
+COPY --from=deps /app/node_modules ./node_modules
+COPY . .
+
+# Create .next directory with proper permissions
+RUN mkdir -p .next && chmod 777 .next
+
+# Install dependencies again to ensure they're available for development
+RUN npm install
+
+EXPOSE 3000
+
+CMD ["npm", "run", "dev"]

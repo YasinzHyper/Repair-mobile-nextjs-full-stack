@@ -9,6 +9,16 @@ import { PaymentRoutes } from '../modules/payment/payment.route';
 
 const router = express.Router();
 
+// Health check endpoint
+router.get('/health', (req, res) => {
+    res.status(200).json({
+        status: 'OK',
+        message: 'Fix My Phone API is running',
+        timestamp: new Date().toISOString(),
+        uptime: process.uptime()
+    });
+});
+
 const modulesRoutes = [
     { path: '/users', route: UserRoutes },
     { path: '/auth', route: AuthRoutes },
