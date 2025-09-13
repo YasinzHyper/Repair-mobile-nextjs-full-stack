@@ -28,6 +28,9 @@ Get the entire application running in **under 3 minutes** with Docker:
 ```bash
 git clone https://github.com/Ujjalzaman/Repair-mobile-nextjs-full-stack.git
 cd Repair-mobile-nextjs-full-stack
+```
+
+```bash
 cp .env.example .env
 ```
 
