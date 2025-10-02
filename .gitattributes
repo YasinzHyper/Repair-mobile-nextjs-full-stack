@@ -1,0 +1,28 @@
+# Set default behavior for line endings
+* text=auto
+
+# Ensure shell scripts always use LF line endings
+*.sh text eol=lf
+
+# Ensure Docker files use LF line endings
+Dockerfile* text eol=lf
+docker-compose*.yml text eol=lf
+
+# Ensure Node.js files use LF line endings in containers
+package.json text eol=lf
+package-lock.json text eol=lf
+*.js text eol=lf
+*.ts text eol=lf
+*.json text eol=lf
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.svg text
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
